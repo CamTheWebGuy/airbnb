@@ -2,24 +2,22 @@ import './App.css';
 import Home from './Home';
 import Header from './Header';
 import Footer from './Footer';
+import SearchPage from './SearchPage';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className='app'>
-      <Header />
-      <Home />
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='search' element={<SearchPage />} />
+          <Route path='/' element={<Home />} />
+        </Routes>
 
-      {/* Home */}
-      {/* Header */}
-
-      {/* Banner */}
-
-      {/* Cards */}
-
-      {/* Footer */}
-
-      {/* SearchPage */}
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
